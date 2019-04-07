@@ -1,6 +1,7 @@
 package bangbang.why.web;
 
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -15,5 +16,12 @@ public class WebController {
         modelAndView.addObject("param", "param");
         modelAndView.setViewName("manager");
         return modelAndView;
+    }
+
+    @RequestMapping("/index2")
+    @ResponseBody
+    public String index2(){
+        System.out.println("manager index");
+        return "manager index2";
     }
 }
